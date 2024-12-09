@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="900.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.AppController">
+   <children>
+      <Label fx:id="bunlabel" alignment="CENTER" prefHeight="135.0" prefWidth="613.0" stylesheets="@../../../../../2年プログラミング演習/demo1/src/main/resources/com/example/main.css" text="万物乱数ちゃん" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+      </Label>
+      <AnchorPane prefHeight="100.0" prefWidth="600.0">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <children>
+            <Button layoutX="87.0" layoutY="23.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="51.0" prefWidth="91.0" text="作成" AnchorPane.leftAnchor="87.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="239.0" layoutY="23.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="51.0" prefWidth="91.0" text="セット" AnchorPane.leftAnchor="239.0" AnchorPane.rightAnchor="270.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="415.0" layoutY="39.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="36.0" prefWidth="62.0" text="表示" AnchorPane.rightAnchor="123.0" />
+            <Hyperlink layoutX="492.0" layoutY="75.0" onAction="#explanation" text="万物乱数ちゃんとは?" AnchorPane.bottomAnchor="1.0" AnchorPane.rightAnchor="6.0">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Hyperlink>
+         </children>
+      </AnchorPane>
+      <ScrollPane prefHeight="170.0" prefWidth="600.0" />
+      <ScrollPane prefHeight="583.0" prefWidth="600.0">
+         <content>
+            <Label prefHeight="593.0" prefWidth="583.0" text="Label" />
+         </content>
+      </ScrollPane>
+   </children>
+</VBox>
