@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="900.0" prefWidth="600.0" stylesheets="main.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.AppController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="900.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.AppController">
    <children>
-      <Label fx:id="bunlabel" alignment="CENTER" prefHeight="135.0" prefWidth="613.0" stylesheets="@../../../../../2年プログラミング演習/demo1/src/main/resources/com/example/main.css" text="万物乱数ちゃん" textAlignment="CENTER">
+      <Label id="bunlabel" fx:id="bunlabel" alignment="CENTER" prefHeight="135.0" prefWidth="613.0" stylesheets="@../../../../../2年プログラミング演習/demo1/src/main/resources/com/example/main.css" text="万物乱数ちゃん" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="40.0" />
          </font>

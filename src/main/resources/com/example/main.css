@@ -1,8 +1,5 @@
-.bunlabel {
-    -fx-font-size: 25pt;
-    -fx-text-fill: yellow;
-    -fx-underline: true;
-    -fx-padding: 10px;
-    -fx-background-color: skyblue;
-    -fx-font-family: consolas;
+.label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
 }
