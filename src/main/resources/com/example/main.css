@@ -1,8 +1,7 @@
 /* なにも上手く行ってません。ガイドを見ます。
 (https://docs.oracle.com/javase/jp/8/javafx/api/javafx/scene/doc-files/cssref.html)
 */
-
-.label {
+Label#bunlabel {
     -fx-font-size: 12px;
     -fx-font-weight: bold;
     -fx-text-fill: #333333;
