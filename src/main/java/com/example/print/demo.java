@@ -14,9 +14,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  */
 public class demo {
     public static void main(String[] args) throws IOException {
-        File fi = new File(Const.PATH_JSON + "sample.json");
-        ObjectMapper mapper = new ObjectMapper();
-        JsonNode jsonNode = mapper.readTree(fi);
-        System.out.println(jsonNode.get("element").get(2).get("out_name").asText());
+        File fi;
+
     }
 }
