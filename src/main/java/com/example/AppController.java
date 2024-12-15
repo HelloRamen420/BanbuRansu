@@ -5,10 +5,14 @@ import java.io.File;
 import java.io.IOException;
 
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.stage.FileChooser;
 
 public class AppController {
+
+    @FXML
+    public Label labelNow;
 
     /*
      * ハイパーリンクと対応してます。
@@ -25,7 +29,10 @@ public class AppController {
     /*
      * セットボタンと対応してます。
      * ファイルを選ぶようになってますがなんかめんどそうなので変えるかもです。
+     *
+     * ちゃんとJSONファイルだけを選択させるように組んでます。
      */
+
     @FXML
     private void setFile() throws IOException {
         String fileName;
@@ -37,5 +44,13 @@ public class AppController {
                 break;
             Const.jsonAlrat();
         }
+
+        /*
+         * これを見ている君へ。
+         * 早く続き作れ。
+         * あとは取得したjsonファイルをどっかに持ってって、要素取得して、ランダムでラベルにsetするだけやねん。
+         * 何を飲んでもええねん。時代はスマドリや。(大嘘)
+         */
+
     }
 }
