@@ -60,6 +60,5 @@ public class AppController {
 
         labelNow.setText("現在のシート : " + Const.getJsonSeatName(file));
         labelPath.setText(file.getAbsolutePath());
-        System.out.println(labelPath.getText());
     }
 }
