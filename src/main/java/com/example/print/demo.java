@@ -14,7 +14,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  */
 public class demo {
     public static void main(String[] args) throws IOException {
-        File fi;
-
+        JsonNode node = PrintControl.jsonJavaWelcomePath(
+                "/Users/kirinokazuya/Library/CloudStorage/OneDrive-独立行政法人国立高等専門学校機構/2年プログラミング演習/demo1/src/main/resources/com/example/json/unko.json");
+        System.out.println(node.get("seat_name").asText());
     }
 }

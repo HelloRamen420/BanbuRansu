@@ -3,6 +3,8 @@ package com.example.print;
 import java.util.Random;
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -10,19 +12,17 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class PrintControl {
 
     /*
-     * とりあえずのメソッドなので絞り込み要素とか入れていくとメソッドごと無くなる可能性があります。
-     * まあ許してや。
+     * このメソッドを授業中に作りましょう。
+     * なかなか出来てきているので。
+     * 深夜の脳みそが一番働いてるわ。
      */
-    public static void setElementLabel(File file) throws IOException {
-        JsonNode node = jsonJavaWalcome(file);
-        Random ran = new Random();
+    public static void printLabel() {
 
-        // 絞り込みの結果を
     }
 
     /*
      * jsonファイルをJavaの世界へWelcomeするメソッドです。
-     * ファイル名orファイルをぶち込むとJsonNodeで返してくれます。
+     * ファイル名 or ファイル or 絶対パス をぶち込むとJsonNodeで返してくれます。
      * 一見しょぼいですが、やっぱ小分けにしたほうがいいかもじゃないですか!!(ガチギレ)
      */
 
@@ -34,7 +34,14 @@ public class PrintControl {
     }
 
     public static JsonNode jsonJavaWelcome(String json) throws IOException {
-        File jsonFile = new File(com.example.Const.PATH_JSON + ".json");
+        File jsonFile = new File(com.example.Const.PATH_JSON + json + ".json");
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode jsonNode = mapper.readTree(jsonFile);
+        return jsonNode;
+    }
+
+    public static JsonNode jsonJavaWelcomePath(String path) throws IOException {
+        File jsonFile = new File(path);
         ObjectMapper mapper = new ObjectMapper();
         JsonNode jsonNode = mapper.readTree(jsonFile);
         return jsonNode;

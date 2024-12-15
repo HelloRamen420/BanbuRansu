@@ -15,6 +15,13 @@ public class AppController {
     public Label labelNow;
 
     /*
+     * ファイルを保持させておく方法が思いつかないんで、この透明のラベルに書いておきたいと思います。
+     * ずるいでしょ。
+     */
+    @FXML
+    public Label labelPath;
+
+    /*
      * ハイパーリンクと対応してます。
      * 「万物乱数ちゃん」とは何か、とかが書いてあります。
      */
@@ -36,9 +43,10 @@ public class AppController {
     @FXML
     private void setFile() throws IOException {
         String fileName;
+        File file;
         while (true) {
             FileChooser chooser = new FileChooser();
-            File file = chooser.showOpenDialog(new Stage());
+            file = chooser.showOpenDialog(new Stage());
             fileName = file.getName();
             if (fileName.substring(fileName.lastIndexOf(".")).equals(".json"))
                 break;
@@ -46,11 +54,12 @@ public class AppController {
         }
 
         /*
-         * これを見ている君へ。
-         * 早く続き作れ。
-         * あとは取得したjsonファイルをどっかに持ってって、要素取得して、ランダムでラベルにsetするだけやねん。
-         * 何を飲んでもええねん。時代はスマドリや。(大嘘)
+         * ここで絞り込みのコントロールを配置するためのメソッド呼び出し。
+         * ですが機能限定版なのでそんなものは作りません。
          */
 
+        labelNow.setText("現在のシート : " + Const.getJsonSeatName(file));
+        labelPath.setText(file.getAbsolutePath());
+        System.out.println(labelPath.getText());
     }
 }
