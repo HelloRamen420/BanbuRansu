@@ -26,7 +26,7 @@
                   <Font size="11.0" />
                </font>
             </Label>
-            <Button layoutX="87.0" layoutY="23.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="51.0" prefWidth="91.0" text="作成" AnchorPane.leftAnchor="87.0">
+            <Button layoutX="87.0" layoutY="23.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#makeStage" prefHeight="51.0" prefWidth="91.0" text="作成" AnchorPane.leftAnchor="87.0">
                <font>
                   <Font size="18.0" />
                </font>
@@ -36,7 +36,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button layoutX="415.0" layoutY="39.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="36.0" prefWidth="62.0" text="表示" AnchorPane.rightAnchor="123.0" />
+            <Button layoutX="415.0" layoutY="39.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#printYeah" prefHeight="36.0" prefWidth="62.0" text="表示" AnchorPane.rightAnchor="123.0" />
             <Hyperlink layoutX="492.0" layoutY="75.0" onAction="#explanation" text="万物乱数ちゃんとは?" AnchorPane.bottomAnchor="1.0" AnchorPane.rightAnchor="6.0">
                <font>
                   <Font size="8.0" />
@@ -49,9 +49,13 @@
             </Label>
          </children>
       </AnchorPane>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" />
       <ScrollPane prefHeight="583.0" prefWidth="600.0">
          <content>
-            <Label prefHeight="593.0" prefWidth="583.0" text="Label" />
+            <Label fx:id="printRes" prefHeight="593.0" prefWidth="583.0" text="Label">
+               <font>
+                  <Font size="48.0" />
+               </font></Label>
          </content>
       </ScrollPane>
    </children>

@@ -16,11 +16,11 @@ public class Const {
      * ファイル選択の時にJSON以外のファイルを読み込んだときに表示するウィンドウのやつ。
      * 煩雑になるのは嫌なのでここに置いてます。
      */
-    public static void jsonAlrat() throws IOException {
+    public static void showErrorAlert(String headerText, String contentText) throws IOException {
         Alert alert = new Alert(AlertType.ERROR);
         alert.setTitle("エラー");
-        alert.setHeaderText("ファイル読み込みに関するエラー");
-        alert.setContentText("JSONファイルを選択してください");
+        alert.setHeaderText(headerText);
+        alert.setContentText(contentText);
         alert.showAndWait();
     }
 

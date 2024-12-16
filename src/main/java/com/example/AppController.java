@@ -21,6 +21,9 @@ public class AppController {
     @FXML
     public Label labelPath;
 
+    @FXML
+    public Label printRes;
+
     /*
      * ハイパーリンクと対応してます。
      * 「万物乱数ちゃん」とは何か、とかが書いてあります。
@@ -31,6 +34,14 @@ public class AppController {
         Scene explanScene = new Scene(App.loadFXML("explanation"), 600, 400);
         explanStage.setScene(explanScene);
         explanStage.showAndWait();
+    }
+
+    @FXML
+    private void makeStage() throws IOException {
+        Stage makeStage = new Stage();
+        Scene makeScene = new Scene(App.loadFXML("make"), 600, 400);
+        makeStage.setScene(makeScene);
+        makeStage.showAndWait();
     }
 
     /*
@@ -50,7 +61,7 @@ public class AppController {
             fileName = file.getName();
             if (fileName.substring(fileName.lastIndexOf(".")).equals(".json"))
                 break;
-            Const.jsonAlrat();
+            Const.showErrorAlert("ファイル読み込みに関するエラー", "JSONファイルを選択してください");
         }
 
         /*
@@ -60,5 +71,19 @@ public class AppController {
 
         labelNow.setText("現在のシート : " + Const.getJsonSeatName(file));
         labelPath.setText(file.getAbsolutePath());
+    }
+
+    /*
+     * 表示ボタンと対応してます。
+     * 正直他のメソッドに飛ばすだけです。
+     * 分けたいので。ピーコックだと高いです。
+     */
+    @FXML
+    private void printYeah() throws IOException {
+        if (labelPath.getText().equals("Label")) {
+            Const.showErrorAlert("ファイルがありません、", "ファイルを選択してください。←マルハラ");
+            return;
+        }
+        com.example.print.PrintControl.printLabel(printRes, labelPath);
     }
 }
