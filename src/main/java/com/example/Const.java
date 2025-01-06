@@ -38,4 +38,18 @@ public class Const {
         JsonNode jsonNode = com.example.print.PrintControl.jsonJavaWelcome(file);
         return jsonNode.get("seat_name").asText();
     }
+
+    /*
+     * 要素数を取得します。
+     * ノリは上と変わらん。
+     */
+    public static int getJsonElementNumber(File file) throws IOException {
+        JsonNode jsonNode = com.example.print.PrintControl.jsonJavaWalcome(file);
+        return jsonNode.get("element_number").asInt();
+    }
+
+    public static int getJsonElementNumber(String file) throws IOException {
+        JsonNode jsonNode = com.example.print.PrintControl.jsonJavaWelcome(file);
+        return jsonNode.get("element_number").asInt();
+    }
 }

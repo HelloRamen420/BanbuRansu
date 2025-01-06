@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.IOException;
 
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.stage.FileChooser;
@@ -25,7 +25,7 @@ public class AppController {
     @FXML
     public Label printRes;
     @FXML
-    public ComboBox<Integer> numberBox;
+    public ChoiceBox<Integer> numberBox;
 
     /*
      * ハイパーリンクと対応してます。
@@ -39,6 +39,11 @@ public class AppController {
         explanStage.showAndWait();
     }
 
+    /*
+     * 作成ボタンを押した時のメソッドです。
+     * 残念ながらまだ作れてはいませんけど。。
+     * 一番後回しです。
+     */
     @FXML
     private void makeStage() throws IOException {
         Stage makeStage = new Stage();
@@ -69,8 +74,13 @@ public class AppController {
 
         /*
          * ここで絞り込みのコントロールを配置するためのメソッド呼び出し。
-         * ですが機能限定版なのでそんなものは作りません。
+         * 機能限定版を作り終えたので着々と着手していきます。
          */
+
+        // いくつ表示するかのChoiceBoxの選択肢ぶちこみ
+        for (int i = 0; i < Const.getJsonElementNumber(file); i++) {
+            numberBox.getItems().add(i + 1);
+        }
 
         labelNow.setText("現在のシート : " + Const.getJsonSeatName(file));
         labelPath.setText(file.getAbsolutePath());
@@ -84,7 +94,7 @@ public class AppController {
     @FXML
     private void printYeah() throws IOException {
         if (labelPath.getText().equals("Label")) {
-            Const.showErrorAlert("ファイルがありません、", "ファイルを選択してください。←マルハラ");
+            Const.showErrorAlert("ファイルがありません、", "ファイルを選択してください。");
             return;
         }
         com.example.print.PrintControl.printLabel(printRes, labelPath, numberBox);

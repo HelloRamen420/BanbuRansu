@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -14,7 +14,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 //表示の時の処理をするコントローラーたちです。
 public class PrintControl {
 
-    public static void printLabel(Label printLabel, Label pathLabel, ComboBox numberBox) throws IOException {
+    public static void printLabel(Label printLabel, Label pathLabel, ChoiceBox numberBox) throws IOException {
         File file = new File(pathLabel.getText());
         Random rm = new Random();
         JsonNode jsonNode = jsonJavaWalcome(file);
