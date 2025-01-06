@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.IOException;
 
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.stage.FileChooser;
@@ -23,6 +24,8 @@ public class AppController {
 
     @FXML
     public Label printRes;
+    @FXML
+    public ComboBox<Integer> numberBox;
 
     /*
      * ハイパーリンクと対応してます。
@@ -84,6 +87,6 @@ public class AppController {
             Const.showErrorAlert("ファイルがありません、", "ファイルを選択してください。←マルハラ");
             return;
         }
-        com.example.print.PrintControl.printLabel(printRes, labelPath);
+        com.example.print.PrintControl.printLabel(printRes, labelPath, numberBox);
     }
 }

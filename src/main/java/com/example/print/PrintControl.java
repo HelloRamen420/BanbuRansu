@@ -4,6 +4,8 @@ import java.util.Random;
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
+
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -12,12 +14,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 //表示の時の処理をするコントローラーたちです。
 public class PrintControl {
 
-    /*
-     * このメソッドを授業中に作りましょう。
-     * なかなか出来てきているので。
-     * 深夜の脳みそが一番働いてるわ。
-     */
-    public static void printLabel(Label printLabel, Label pathLabel) throws IOException {
+    public static void printLabel(Label printLabel, Label pathLabel, ComboBox numberBox) throws IOException {
         File file = new File(pathLabel.getText());
         Random rm = new Random();
         JsonNode jsonNode = jsonJavaWalcome(file);
@@ -30,6 +27,8 @@ public class PrintControl {
          * 表示する要素数はシンプルにゲットします。
          * 出来次第引数に書きますんで。待機。晩成。じゃねえよ。は？
          */
+
+        // int number=numberBox.get
 
         // 表示する要素数によってfor文回したりしますが、まあ今はええです。
         printLabel.setText(jsonNode.get("element").get(rm.nextInt(jsonNode.get("element_number").asInt()))
