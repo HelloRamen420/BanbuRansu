@@ -81,7 +81,7 @@ public class AppController {
         for (int i = 0; i < Const.getJsonElementNumber(file); i++) {
             numberBox.getItems().add(i + 1);
         }
-
+        numberBox.getSelectionModel().select(0);
         labelNow.setText("現在のシート : " + Const.getJsonSeatName(file));
         labelPath.setText(file.getAbsolutePath());
     }
@@ -89,7 +89,6 @@ public class AppController {
     /*
      * 表示ボタンと対応してます。
      * 正直他のメソッドに飛ばすだけです。
-     * 分けたいので。ピーコックだと高いです。
      */
     @FXML
     private void printYeah() throws IOException {

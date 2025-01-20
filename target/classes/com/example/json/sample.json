@@ -1,5 +1,8 @@
-{"seat_name":"sample_seat","element_number":3,
+{"seat_name":"sample_seat","element_number":6,
     "element":[ {"id":1,"out_name":"Hello"},
                 {"id":2,"out_name":"See you"},
-                {"id":3,"out_name":"Nice to meet you"}]
+                {"id":3,"out_name":"Nice to meet you"},
+                {"id":4,"out_name":"いや違うんだって"},
+                {"id":5,"out_name":"先っちょだけだから"},
+                {"id":6,"out_name":"殺すぞ"}]
 }

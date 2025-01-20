@@ -54,14 +54,15 @@
          <content>
             <AnchorPane prefHeight="161.0" prefWidth="583.0">
                <children>
-                  <ChoiceBox fx:id="numberBox" layoutY="31.0" prefWidth="150.0" />
+                  <Label layoutX="6.0" layoutY="2.0" prefHeight="17.0" prefWidth="80.0" text="表示する数?" textAlignment="CENTER" />
+                  <ChoiceBox fx:id="numberBox" layoutX="9.0" layoutY="18.0" prefHeight="26.0" prefWidth="62.0" />
                </children>
             </AnchorPane>
          </content>
       </ScrollPane>
       <ScrollPane prefHeight="583.0" prefWidth="600.0">
          <content>
-            <Label fx:id="printRes" prefHeight="593.0" prefWidth="583.0" text="Label">
+            <Label fx:id="printRes" contentDisplay="TOP" prefHeight="593.0" prefWidth="579.0" text="表示画面" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font size="48.0" />
                </font></Label>

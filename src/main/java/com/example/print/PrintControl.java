@@ -3,11 +3,11 @@ package com.example.print;
 import java.util.Random;
 import java.io.File;
 import java.io.IOException;
-import java.net.URI;
 
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 
+import com.example.Const;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -28,11 +28,15 @@ public class PrintControl {
          * 出来次第引数に書きますんで。待機。晩成。じゃねえよ。は？
          */
 
-        // int number=numberBox.get
+        int printNumber = (Integer) numberBox.getValue();
 
         // 表示する要素数によってfor文回したりしますが、まあ今はええです。
-        printLabel.setText(jsonNode.get("element").get(rm.nextInt(jsonNode.get("element_number").asInt()))
-                .get("out_name").asText());
+        String printText = "";
+        for (int i = 0; i < printNumber; i++) {
+            printText += jsonNode.get("element").get(rm.nextInt(Const.getJsonElementNumber(file)))
+                    .get("out_name").asText() + "\n";
+        }
+        printLabel.setText(printText);
     }
 
     /*
