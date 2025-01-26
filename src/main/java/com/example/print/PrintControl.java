@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
 
 import com.example.Const;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -14,7 +15,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 //表示の時の処理をするコントローラーたちです。
 public class PrintControl {
 
-    public static void printLabel(Label printLabel, Label pathLabel, ChoiceBox numberBox) throws IOException {
+    public static void printLabel(Label printLabel, Label pathLabel, Slider sliderPrint) throws IOException {
         File file = new File(pathLabel.getText());
         Random rm = new Random();
         JsonNode jsonNode = jsonJavaWalcome(file);
@@ -28,7 +29,7 @@ public class PrintControl {
          * 出来次第引数に書きますんで。待機。晩成。じゃねえよ。は？
          */
 
-        int printNumber = (Integer) numberBox.getValue();
+        int printNumber = (int) sliderPrint.getValue();
 
         // 表示する要素数によってfor文回したりしますが、まあ今はええです。
         String printText = "";

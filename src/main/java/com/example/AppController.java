@@ -7,6 +7,7 @@ import java.io.IOException;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
 import javafx.stage.Stage;
 import javafx.stage.FileChooser;
 
@@ -25,7 +26,9 @@ public class AppController {
     @FXML
     public Label printRes;
     @FXML
-    public ChoiceBox<Integer> numberBox;
+    public Slider sliderPrint;
+    @FXML
+    public Label printNumberLabel;
 
     /*
      * ハイパーリンクと対応してます。
@@ -71,17 +74,18 @@ public class AppController {
                 break;
             Const.showErrorAlert("ファイル読み込みに関するエラー", "JSONファイルを選択してください");
         }
-
         /*
          * ここで絞り込みのコントロールを配置するためのメソッド呼び出し。
          * 機能限定版を作り終えたので着々と着手していきます。
          */
 
-        // いくつ表示するかのChoiceBoxの選択肢ぶちこみ
-        for (int i = 0; i < Const.getJsonElementNumber(file); i++) {
-            numberBox.getItems().add(i + 1);
-        }
-        numberBox.getSelectionModel().select(0);
+        // いくつ表示するかのSliderの選択肢ぶちこみ
+        sliderPrint.setMin(1);
+        sliderPrint.setMax(Const.getJsonElementNumber(file));
+        sliderPrint.setShowTickLabels(true);
+        sliderPrint.setShowTickMarks(true);
+        sliderPrint.setBlockIncrement(1);
+
         labelNow.setText("現在のシート : " + Const.getJsonSeatName(file));
         labelPath.setText(file.getAbsolutePath());
     }
@@ -96,6 +100,11 @@ public class AppController {
             Const.showErrorAlert("ファイルがありません、", "ファイルを選択してください。");
             return;
         }
-        com.example.print.PrintControl.printLabel(printRes, labelPath, numberBox);
+        com.example.print.PrintControl.printLabel(printRes, labelPath, sliderPrint);
+    }
+
+    @FXML
+    private void setPrintNumberLabel() throws IOException {
+        printNumberLabel.setText(String.valueOf((int) sliderPrint.getValue()));
     }
 }
